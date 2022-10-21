@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head> 
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#212327" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="Web site from Tom Maenhout"
     />
+    <!--
+      bootstrap
+    -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!-- <link rel="manifest" href="%PUBLIC_URL%/manifest.json" /> -->
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -24,11 +29,194 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Tom Maenhout</title>
+    <style>
+      body {
+        background-color: #121316!important;
+      }
+      .space {
+        height: 15vh;
+        background-color: #212327;
+        }
+      .app{
+        background-color: #212327;
+        }
+      	.spline{
+				background-size: cover;
+				background-position: center;
+				background-attachment: fixed;
+				min-height: 100vh; 
+        max-height: 100vh;
+        z-index:1
+			}
+      .splineContact{
+				background-size: cover;
+				background-position: center;
+				background-attachment: fixed;
+				min-height: 100vh;
+        max-height: 100vh;
+        z-index:1
+			}
+      .div9{
+        height: 9vh;
+        background-color: #121316;
+      }
+      .fullscreen{
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        min-height: 100vh; 
+        max-height: 100vh;
+      }
+      .halfscreen{
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        min-height: 50vh;
+        max-height: 50vh;
+        padding: 0px
+      }
+      .widthfull{
+        width: 92.5%;
+      }
+      .noborder{
+        border: none;
+      }
+      #About{
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        min-height: 100vh;
+        background-color: #212327;
+      }
+      .bg-black-hero {
+        background-color: #121316;   
+            
+      }
+      .background-red{
+        background-color: red;
+        
+      }
+      .bg-grey{
+       
+        background-color: #212327;
+        height: 0.5rem;
+      }
+      .bg-footer{
+        justify-content: left;
+        background-color: #212327;
+        width : 100%;
+        padding: 0;
+       
+      }
+
+      
+
+      .gradient-gray {
+      background-image: linear-gradient(to right, #D3D3D3,  #212327);
+       height: fit-content;
+
+        ;
+      }
+      .width-100 {
+        width: 100%;
+      }
+      .width-90 {
+        width: 90%;
+      }
+
+      .canvas {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+      }
+ 
+      .width-50 {
+        width: 50%;
+      }
+      .text{
+        z-index: 2;
+        position: absolute;
+        width: 100%; 
+        font-family: "Roboto", sans-serif;
+        margin-left: 0;
+        background-color: transparent;
+      }
+
+      .textfont1 {
+        font-family: "Roboto", sans-serif;
+   
+      }
+      .navbar .navbar-toggler .icon-bar{
+          background-color: white !important;
+        }
+
+        img {
+          max-width: 100%;
+          max-height: 100%;
+      }
+
+      .img-height{
+        height : fit-content;
+        width: fit-content;
+    
+      }
+
+      
+      .navbar{
+      --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' class='d-block mx-auto' role='img' viewBox='0 0 30 30' focusable='false'%3e%3ctitle%3eMenu%3c/title%3e%3cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+      padding-left: 5%;
+      padding-right: 5%;
+      }
+      .navbar-brand{
+        font-size: 1.5rem;
+      }
+      .logo {
+        height: 50px;
+        object-fit: cover;
+      }
+      .navbar .navbar-toggler{
+        border:solid white;
+      }
+      .hrstyling {
+        border: 0;
+        height: 5px;
+        background: #333;
+        background-image: linear-gradient(to left, #D3D3D3,  #121316);
+        }
+
+        .btn-outline-light {
+          --bs-btn-hover-bg: #121316;
+          --bs-btn-hover-color: white;
+        }
+        .modal {
+
+        --bs-modal-bg: #121316;
+        --bs-modal-header-border-color: #121316;
+        --bs-modal-footer-border-color: #121316;
+      }
+      .background-black {
+        --bs-btn-hover-bg: #121316; 
+      }    
+        
+        
+        
+        input:-webkit-autofill, input:focus:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0 100px #121316 inset;
+            -webkit-text-fill-color: white;
+            -webkit-border-image: none;
+          }
+                
+
+    </style>
+
+       
   </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+  <body className="background-red"  >
+    <div className="background-red" id="root"></div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -39,5 +227,6 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
   </body>
 </html>

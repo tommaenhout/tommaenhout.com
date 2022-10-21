@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import Hero from "./components/Hero";
+import About from "./components/About";
+import { useState } from "react";
+import Contact from "./components/Contact";
 
 function App() {
+  const [ready, setReady] = useState(false);
+  const handleReady = () => setReady(true);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+   
+    <div>
+      <Hero 
+      handleReady={handleReady}
+      ready={ready}
+      />
+
+      {ready ? (
+        <div>
+          <About />
+          <Contact
+           handleReady={handleReady}
+           ready={ready}
+          />
+        </div>
+      ) : (
+        <div className="p-2 text-white position-absolute bottom-50 end-50">
+          <div className="spinner-border text-white " role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
