@@ -21,7 +21,9 @@ function BackgroundSpline({splineclass, screen, link, content, loading, setLoadi
         <div className={`container-fluid  ${screen}`}>{content}</div>
       </div>
       <div>
-         {loading && (<Loader/>)}
+         <Loader
+            loading={loading}
+         />
           <Spline 
             className={splineclass}
             scene={link} 
