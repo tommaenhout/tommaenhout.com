@@ -3,7 +3,9 @@ import BackgroundSpline from "./BackgroundSpline";
 import "./textfadeIn.css";
 
 
-function Hero(props) {
+function Hero({loading, setLoading}) {
+
+
   return (
     <section id="Hero">
       <NavbarHero />
@@ -26,8 +28,8 @@ function Hero(props) {
         link={"https://prod.spline.design/XME1RwJcmat0oHI9/scene.splinecode"}
         screen= "fullscreen"
         splineclass="spline"
-        handleReady= {props.handleReady}
-        ready = {props.ready}
+        loading={loading}
+        setLoading={setLoading}
       />
     </section>
   );

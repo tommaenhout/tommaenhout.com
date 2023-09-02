@@ -1,27 +1,32 @@
-import Spline from "@splinetool/react-spline";
+import React, { useEffect } from "react";
+import { Suspense } from "react";
 import "./textfadeIn.css";
-import {useEffect, useState} from "react";
+import Loader from "./Loader";
+
+const Spline = React.lazy(() => import("@splinetool/react-spline"));
+
+function BackgroundSpline({splineclass, screen, link, content, loading, setLoading}) {
 
 
-
-function BackgroundSpline(props) {
-  const [content, setContent] = useState();
-
-  useEffect(() => {
-    if (props.ready) {
-      setContent(props.content);
+  function finishLoadingHandler() {
+    setTimeout(() => {
+      setLoading(false);
     }
-  }, [props.ready, props.content]);
- 
+    , 1000);
+  }
+
   return (
     <div>
       <div className="text bg-transparent">
-        <div className={`container-fluid  ${props.screen}`}>{content}</div>
+        <div className={`container-fluid  ${screen}`}>{content}</div>
       </div>
       <div>
-        <Spline className={props.splineclass}
-        scene={props.link} 
-        onLoad={props.handleReady}/>
+         {loading && (<Loader/>)}
+          <Spline 
+            className={splineclass}
+            scene={link} 
+            onLoad={() => finishLoadingHandler()}
+            />
       </div>
     </div>
   );

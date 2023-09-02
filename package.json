@@ -4,6 +4,9 @@
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^3.7.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.7",
     "@splinetool/react-spline": "^2.2.3",
     "@splinetool/runtime": "^0.9.111",
     "@testing-library/jest-dom": "^5.16.5",
