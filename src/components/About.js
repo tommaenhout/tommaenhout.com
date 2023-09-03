@@ -20,7 +20,7 @@ function About() {
             </p>
             <div className="row  justify-content-begin">
               <div className="col-12 col-md-auto ">
-            <a href="https://drive.google.com/file/d/1c65QwDdeE0e_7zL5Qhj-qikqWAOrxB8j/view?usp=sharing" className="btn btn-primary bg-dark mt-2 text-white p-2 rounded textfont1 border-success">Download CV</a>
+            <a href="https://drive.google.com/file/d/1EmSMnEn6KPtFCZZFAmvyP0o6AE81_973/view?usp=sharing" className="btn btn-primary bg-dark mt-2 text-white p-2 rounded textfont1 border-success">Download CV</a>
             </div>
             <div className="col-12 col-md-auto ">
             <a href="https://docs.google.com/document/d/1mBfCVSmIUV2pDuLMdHaxM5Ym4bMgT2W8vBtU2ecaBHk/edit?usp=sharing" className="btn btn-primary bg-dark mt-2 text-white p-2 rounded textfont1 border-success">Download Portfolio</a>
