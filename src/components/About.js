@@ -84,7 +84,7 @@ function About() {
                   <div className="col-11 col-lg-5">
                     <h6>Front End Developer, IT Rock (April 2023 - now) </h6>
                     <p className="opacity-50">
-                    I currently actively contribute to significant projects, leveraging my skills in React.js, CSS/Sass, Styled Components, Git (utilizing Bitbucket), Jira, and Bootstrap add currently
+                    I currently actively contribute to significant projects, leveraging my skills in React.js, CSS/Sass, Styled Components, Git (utilizing Bitbucket), Jira, and Bootstrap.
                     </p>
                   </div>
                   <div className="col-11 col-lg-5">
