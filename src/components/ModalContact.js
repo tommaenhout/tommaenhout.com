@@ -1,23 +1,23 @@
 import {Modal, Button} from 'react-bootstrap'
 
 
-function ModalContact (props) {
+function ModalContact ({show, handleClose, title, body}) {
 
     return (
         <>
         <>
-     <Modal show={props.show} 
-     onHide={props.handleClose}
-     animation={false}>
+     <Modal 
+          show={show} 
+          onHide={handleClose}
+          animation={false}>
        <Modal.Header 
        closeButton 
-       
        className="background-black">  
-         <Modal.Title className="text-white textfont1">Message sent</Modal.Title>
+         <Modal.Title className="text-white textfont1">{title}</Modal.Title>
        </Modal.Header>
-       <Modal.Body className="background-black text-white textfont1">Thank you for your message, you'll be contacted soon</Modal.Body>
+       <Modal.Body className="background-black text-white textfont1">{body}</Modal.Body>
        <Modal.Footer className="background-black">
-         <Button className="btn btn-primary bg-dark mt-2 text-white p-2 rounded textfont1 border-success" onClick={props.handleClose}>
+         <Button className="btn btn-primary bg-dark mt-2 text-white p-2 rounded textfont1 border-success" onClick={handleClose}>
            Close
          </Button>
        </Modal.Footer>

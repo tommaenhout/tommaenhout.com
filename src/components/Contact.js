@@ -30,6 +30,8 @@ function Contact(props) {
           show={show}
           handleClose={handleClose}
           handleShow={handleShow}
+          title={"Message sent"}
+          body={"Thank you for your message, you'll be contacted soon"}
           />
       <div className="space"></div>
       <div className="">
