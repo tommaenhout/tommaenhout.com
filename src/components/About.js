@@ -13,7 +13,7 @@ function About() {
         </div>
         <div className="col-11 col-md-6 d-flex justify-content-start  ps-0 container-fluid text-white color-black mb-4 me-0">
           <div className="container-fluid ps-5 ps-md-0">
-            <h2 className="mt-5 textfont1">About Me</h2>
+            <h2 className="mt-5 textfont1 letter-spacing">About Me</h2>
             <p className="mt-4 textfont1">
               I'm a front end developer from Belgium living in Argentina. Just before the pandemic, I made a career shift. I started studying systems analysis at ORT Buenos Aires and graduated in June last year. I've accumulated two years of valuable experience as a front-end developer, working on several major projects with React as my primary framework. I'm eager to keep progressing in my role as a front-end developer.
             </p>
@@ -31,8 +31,8 @@ function About() {
         <div className="row ms-0">
           <div className="col-md-11  bg-black-hero widthfull text-white offset-1">
             <br></br>
-            <h2 className="offset-1 mt-4"> Skills</h2>
-            <p className="col-md-7 offset-1 mt-3 opacity-50 textfont1">
+            <h2 className="offset-1 mt-4 letter-spacing"> Skills</h2>
+            <p className="col-md-7 offset-1 mt-2 opacity-50 textfont1">
               Web development, mobile application development for Android/ iOS, JavaScript, React.js, React Native, MongoDB, Node.js Kotlin, .NET,
               Java, C#, Solidity, Truffle creativity, flexibility, fast learner,
               positive attitude, team player
@@ -55,8 +55,8 @@ function About() {
             </div>
 
             <div className="row">
-              <div className="col-11 col-md-4 offset-1 mt-4">
-                  <h2 className="textfont1">Education</h2>
+              <div className="col-11 col-md-4 offset-1 mt-5">
+                  <h2 className="textfont1 letter-spacing">Education</h2>
                   <h6 className="textfont1">Front End Development Coderhouse Argentina (2022 - 2023)</h6>
                   <p className="opacity-50 textfont1">
                   During my time at Coderhouse, I acquired essential front-end development skills, including proficiency in HTML, CSS, JavaScript, and React, along with expertise in responsive design, UI development, and web accessibility. These skills have prepared me to create engaging and user-friendly web experiences.
@@ -68,7 +68,7 @@ function About() {
               </div>
               <div className="col-11 col-md-4 offset-1 mt-4 d-lg-flex align-items-center">
                 <div>
-                  <h2 className="textfont1">Language skills</h2>
+                  <h2 className="textfont1 letter-spacing">Language skills</h2>
                   <ProgressBar width="width-100" title="Dutch" />
                   <ProgressBar width="width-90" title="English" />
                   <ProgressBar width="width-90" title="Spanish" />
@@ -77,9 +77,9 @@ function About() {
                 </div>
               </div>
             </div>
-            <h2 className="offset-1 mt-5 mt-lg-0">Experience</h2>
+            <h2 className="offset-1 mt-5 mt-lg-3 letter-spacing">Experience</h2>
             <div className="d-lg-flex">
-              <div className=" col-11 col-md-9 d-lg-flex gap-5 offset-1 mt-4 mb-4">
+              <div className=" col-11 col-md-9 d-lg-flex gap-5 offset-1 mt-2 mb-4">
                   <div className="col-11 col-lg-5">
                     <h6>Front End Developer, IT Rock (April 2023 - now) </h6>
                     <p className="opacity-50 textfont1">

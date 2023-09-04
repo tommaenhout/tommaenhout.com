@@ -45,7 +45,7 @@ function Contact(props) {
             onSubmit={onSubmitForm}>
     
                 <div className="m-4">
-                  <h2 className="text-white offset-md-5 mt-5 textfont1" > Contact</h2>
+                  <h2 className="text-white offset-md-5 mt-5 textfont1 letter-spacing" > Contact</h2>
                   <h4 className="text-white offset-md-5 mt-2 textfont1">
                     {" "}
                     Interested in hiring me?

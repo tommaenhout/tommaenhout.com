@@ -13,13 +13,13 @@ function Hero({loading, setLoading}) {
         content={
           <div>
             <div className="row justify-content-end ">
-              <div className="flyIn lineOne col-md-5 bottom-1 p-4">Front</div>
+              <div className="flyIn lineOne col-md-5 bottom-1 p-4 letter-spacing">Front</div>
             </div>
             <div className="row justify-content-end">
-              <div className="flyIn lineTwo col-md-5 bottom-2 p-4">End</div>
+              <div className="flyIn lineTwo col-md-5 bottom-2 p-4 letter-spacing">End</div>
             </div>
             <div className="row justify-content-end">
-              <div className="flyIn lineThree col-md-5 bottom-3 p-4">
+              <div className="flyIn lineThree col-md-5 bottom-3 p-4 letter-spacing">
                 Developer
               </div>
             </div>
