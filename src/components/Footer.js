@@ -8,7 +8,7 @@ function Footer() {
         <hr className="hrstyling"/>
         <div className="row  m-0">
           <div className="col-12 col-md-4 mt-4 ">
-            <h4 className="text-white offset-3 letter-spacing">Tom Maenhout</h4>
+            <h4 className="text-white offset-3">Tom Maenhout</h4>
             <nav>
               <a href="#About" className="nav-link active text-white opacity-50 offset-3">
                 About me
@@ -22,11 +22,11 @@ function Footer() {
             </nav>
           </div>
           <div className="col-12 col-md-4 mt-4 ">
-            <h4 className="text-white offset-3 letter-spacing">Contact</h4>
+            <h4 className="text-white offset-3 ">Contact</h4>
             <p className="text-white offset-3 opacity-50">tom.maenhout@gmail.com</p>
           </div>
           <div className="col-12 col-md-4 mt-4">
-            <h4 className="text-white offset-3 letter-spacing">Follow me</h4>
+            <h4 className="text-white offset-3">Follow me</h4>
             <Socials
             offset= "offset-3 opacity-50"
             opacity= "opacity-50"
