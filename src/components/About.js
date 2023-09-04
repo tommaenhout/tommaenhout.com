@@ -6,14 +6,13 @@ function About() {
     <section id="About">
       <div className="div9">
       </div>
-      <div className="row textfont1 mt-0">
-        <br></br>
-        <div className="row ">
+      <div className="row m-0 p-0 textfont1 mt-0 d-flex">
+        <div className="row me-0 pe-0">
         <div className=" col-4 offset-1 gradient-gray pt-0">
           <img className="img-fluid d-none d-md-block" width={300} src={Profil} alt="profil" />
         </div>
-        <div className="col-11 col-md-5 bg-transparent container-fluid text-white color-black mb-4">
-          <div className="container-fluid">
+        <div className="col-11 col-md-6 d-flex justify-content-start  ps-0 container-fluid text-white color-black mb-4 me-0">
+          <div className="container-fluid ps-5 ps-md-0">
             <h2 className="mt-5 textfont1">About Me</h2>
             <p className="mt-4 textfont1">
               I'm a front end developer from Belgium living in Argentina. Just before the pandemic, I made a career shift. I started studying systems analysis at ORT Buenos Aires and graduated in June last year. I've accumulated two years of valuable experience as a front-end developer, working on several major projects with React as my primary framework. I'm eager to keep progressing in my role as a front-end developer.
@@ -29,7 +28,7 @@ function About() {
             </div>
           </div>
         </div>
-        <div className="row">
+        <div className="row ms-0">
           <div className="col-md-11  bg-black-hero widthfull text-white offset-1">
             <br></br>
             <h2 className="offset-1 mt-4"> Skills</h2>
@@ -80,16 +79,16 @@ function About() {
             </div>
             <h2 className="offset-1 mt-5 mt-lg-0">Experience</h2>
             <div className="d-lg-flex">
-              <div className=" col-11 col-md-9 d-lg-flex gap-1 offset-1 mt-4 mb-4">
+              <div className=" col-11 col-md-9 d-lg-flex gap-5 offset-1 mt-4 mb-4">
                   <div className="col-11 col-lg-5">
                     <h6>Front End Developer, IT Rock (April 2023 - now) </h6>
-                    <p className="opacity-50">
+                    <p className="opacity-50 textfont1">
                     I currently actively contribute to significant projects, leveraging my skills in React.js, CSS/Sass, Styled Components, Git (utilizing Bitbucket), Jira, and Bootstrap.
                     </p>
                   </div>
                   <div className="col-11 col-lg-5">
                     <h6>Freelance, Full Stack Developer (2022 - April 2023) </h6>
-                    <p className="opacity-50">
+                    <p className="opacity-50 textfont1">
                     Since I am graduated as systems analyst, I participated in different projects. Most of them were web applications. The technologies that I used were: React.js, Node.js, Mongo DB, Bootstrap, CSS and HTML.
                     </p>
                   </div>
