@@ -1,0 +1,10 @@
+{
+  "projects": {
+    "default": "tommaenhout-b1c18",
+    "tommaenhout.com": "tommaenhout-b1c18",
+    "tommaenhout": "tommaenhout-b1c18"
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
+}
