@@ -1,6 +1,11 @@
 import { Fragment, useEffect, useState } from "react";
 
-const ImgView = ({ close, imgs }) => {
+interface ImgViewProps {
+  close: any;
+  imgs: any[];
+}
+
+const ImgView = ({ close, imgs } : ImgViewProps) => {
   const images =
     imgs.length > 0
       ? imgs
@@ -67,9 +72,9 @@ const ImgView = ({ close, imgs }) => {
   );
 };
 const ImageGallery = () => {
-  const [imgs, setImgs] = useState([]);
+  const [imgs, setImgs] = useState<any>([]);
   const [view, setView] = useState(false);
-  const [imgContainer, setImgContainer] = useState([]);
+  const [imgContainer, setImgContainer] = useState<HTMLCollectionOf<HTMLAnchorElement>>([] as any);
   useEffect(() => {
     setTimeout(() => {
       const imgGallery = document.querySelectorAll(".has-popup-gallery");

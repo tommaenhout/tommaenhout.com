@@ -2,8 +2,8 @@ import ActiveSection from "@/hooks/activeSection";
 
 interface ResumeProps {
   children: React.ReactNode;
-  animationIn: boolean;
-  animationOut: boolean;
+  animationIn?: boolean;
+  animationOut?: boolean;
 }
 const Resume = ({ children, animationIn, animationOut } : ResumeProps) => {
   return (

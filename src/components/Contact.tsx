@@ -1,8 +1,8 @@
 import ActiveSection from "@/hooks/activeSection";
 interface ContactProps {
   children: React.ReactNode;
-  animationIn: boolean;
-  animationOut: boolean;
+  animationIn?: boolean;
+  animationOut?: boolean;
 }
 const Contact = ({ children, animationIn, animationOut } : ContactProps) => {
   return (

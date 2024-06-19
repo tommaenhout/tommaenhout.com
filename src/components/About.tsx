@@ -2,8 +2,8 @@ import ActiveSection from "@/hooks/activeSection";
 
 interface AboutProps {
   children: React.ReactNode;
-  animationIn: boolean;
-  animationOut: boolean;
+  animationIn?: boolean;
+  animationOut?: boolean;
 }
 
 const About = ({ children, animationIn, animationOut } : AboutProps) => {
