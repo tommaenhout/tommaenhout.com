@@ -17,7 +17,7 @@ import Skills from "./sections/Skills";
 import Testimonials from "./sections/Testimonials";
 import TypingAnimation from "./TypingAnimation";
 import ContentContainer from "./layout/ContentContainer";
-import Header from "../src/layout/Header";
+import Header from "./layout/Header";
 import Layout from "../src/layout/Layout";
 
 const bio = `<p>
