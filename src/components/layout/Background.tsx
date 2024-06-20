@@ -1,6 +1,6 @@
 interface BackgroundProps {
   bg?: string;
-  img?: string;
+  img: string;
 }
 
 const Background = ({ bg, img } : BackgroundProps) => {
@@ -21,7 +21,7 @@ export default Background;
 
 const BackgroundBlured = () => {
   return (
-    <div class="blured-background">
+    <div className="blured-background">
     <span></span>
     <span></span>
     <span></span>
@@ -65,7 +65,11 @@ const BackgroundGradient = () => {
   );
 };
 
-const BackgroundImg = ({ img }) => {
+interface BackgroundImgProps {
+  img: string;
+}
+
+const BackgroundImg = ({ img  }:BackgroundImgProps) => {
   return (
     <div className="background" style={{ backgroundImage: `url(${img})` }} />
   );

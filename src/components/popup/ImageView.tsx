@@ -1,7 +1,12 @@
 import { Fragment, useEffect, useState } from "react";
-import useClickOutside from "../../useClickOutside";
+import useClickOutside from "@/hooks/useClickOutside";
 
-const ImgViews = ({ close, src }) => {
+interface ImgViewsProps {
+  close: (arg0: boolean) => void;
+  src: string;
+}
+
+const ImgViews = ({ close, src } : ImgViewsProps) => {
   let domNode = useClickOutside(() => {
     close(false);
   });
@@ -30,7 +35,7 @@ const ImgViews = ({ close, src }) => {
 
 const ImageView = () => {
   const [img, setImg] = useState(false);
-  const [imgValue, setImgValue] = useState(null);
+  const [imgValue, setImgValue] = useState<any>(null);
 
   useEffect(() => {
     setTimeout(() => {

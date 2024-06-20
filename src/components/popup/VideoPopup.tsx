@@ -1,7 +1,12 @@
 import React, { Fragment, useEffect, useState } from "react";
-import useClickOutside from "../../useClickOutside";
+import useClickOutside from "@/hooks/useClickOutside";
 
-const VideoPopup_ = ({ close, videoID }) => {
+interface VideoPopupProps {
+  close: (arg0?: boolean) => void;
+  videoID: string;
+}
+
+const VideoPopup_ = ({ close, videoID } : VideoPopupProps) => {
   let domNode = useClickOutside(() => {
     close(false);
   });
@@ -42,7 +47,7 @@ const VideoPopup_ = ({ close, videoID }) => {
 
 const VideoPopup = () => {
   const [video, setVideo] = useState(false);
-  const [videoValue, setVideoValue] = useState(null);
+  const [videoValue, setVideoValue] = useState<any>(null);
   useEffect(() => {
     setTimeout(() => {
       const a = document.querySelectorAll("a");

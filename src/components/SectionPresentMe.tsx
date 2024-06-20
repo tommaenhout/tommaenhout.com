@@ -18,7 +18,7 @@ import Testimonials from "./sections/Testimonials";
 import TypingAnimation from "./TypingAnimation";
 import ContentContainer from "./layout/ContentContainer";
 import Header from "./layout/Header";
-import Layout from "../src/layout/Layout";
+import Layout from "./layout/Layout";
 
 const bio = `<p>
 I’m 33 year old Belgian full stack developer, living in Argentina. Just before the pandemic I decided to change careers. I started to study systems analysis in ORT Buenos Aires. Last June I graduated and now I’m excited to take my first steps into the working field.

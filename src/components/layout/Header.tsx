@@ -11,7 +11,7 @@ const headerMenus = [
 interface HeaderProps {
   noSideBarBtn?: boolean;
   menus?: any;
-  animationText: string[];
+  animationText?: string[];
 }
 
 const Header = ({ noSideBarBtn, menus, animationText } : HeaderProps) => {

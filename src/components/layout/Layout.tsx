@@ -40,7 +40,7 @@ const Layout = ({
       <ImageGallery />
       <ContentModal />
       <div className={`page ${!noSkin ? "new-skin" : ""}`}>
-        <Background bg={bg} img={bgImgUrl} />
+        <Background bg={bg} img={bgImgUrl || ""} />
         <div
           className={`${containerCls ? containerCls : "container opened layout-rounded-style minimal-icons-style"}`}
           data-animation-in={animationIn ? animationIn : "fadeInLeft"}
