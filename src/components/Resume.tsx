@@ -1,3 +1,5 @@
+"use client"
+
 import ActiveSection from "@/hooks/activeSection";
 
 interface ResumeProps {

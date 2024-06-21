@@ -19,19 +19,17 @@ import TypingAnimation from "./TypingAnimation";
 import ContentContainer from "./layout/ContentContainer";
 import Header from "./layout/Header";
 import Layout from "./layout/Layout";
+import "../../public/css/new-skin/new-skin.css";
+import "../../public/css/demos/demo-2-colors.css";
+import "../../public/css/new-skin/classic-skin.css";
+import "../../public/css/template-dark/dark.css";
 
 const bio = `<p>
 I’m 33 year old Belgian full stack developer, living in Argentina. Just before the pandemic I decided to change careers. I started to study systems analysis in ORT Buenos Aires. Last June I graduated and now I’m excited to take my first steps into the working field.
 </p>`;
-const IndexDark = () => {
+const SectionPresentMe = () => {
   return (
     <Layout bg={"gradient"}>
-      <Head>
-        <link rel="stylesheet" href="css/new-skin/new-skin.css" />
-        <link rel="stylesheet" href="css/demos/demo-2-colors.css" />
-        <link rel="stylesheet" href="css/new-skin/classic-skin.css" />
-        <link rel="stylesheet" href="css/template-dark/dark.css" />
-      </Head>
       <Header />
       <Home>
         <div className="profile">
@@ -98,4 +96,4 @@ const IndexDark = () => {
     </Layout>
   );
 };
-export default IndexDark;
+export default SectionPresentMe;

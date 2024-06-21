@@ -1,3 +1,5 @@
+"use client"
+
 import { Fragment, useContext } from "react";
 import BlogPostNew, { BlogPostClassic } from "../BlogPost";
 

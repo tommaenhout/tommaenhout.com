@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useState } from "react";
-import useClickOutside from "@/hooks/useClickOutside";
+import useClickOutside from "../../hooks/useClickOutside";
 interface ContentProps {
   content: any;
   close: any;

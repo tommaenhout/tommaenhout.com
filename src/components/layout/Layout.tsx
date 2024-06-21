@@ -1,11 +1,13 @@
+"use client"
+
 import { Fragment, useEffect } from "react";
-import ContentModal from "../popup/ContentModal.jsx";
-import ImageGallery from "../popup/ImageGallery.jsx";
-import ImageView from "../popup/ImageView.jsx";
-import VideoPopup from "../popup/VideoPopup.jsx";
-import { createSkillsDot, dotResize } from "../utils.js";
-import Background from "./Background.js";
-import ContentSidebar from "./ContentSidebar.js";
+import ContentModal from "../popup/ContentModal";
+import ImageGallery from "../popup/ImageGallery";
+import ImageView from "../popup/ImageView";
+import VideoPopup from "../popup/VideoPopup";
+import { createSkillsDot, dotResize } from "../utils";
+import Background from "./Background";
+import ContentSidebar from "./ContentSidebar";
 
 interface LayoutProps {
   children: React.ReactNode;

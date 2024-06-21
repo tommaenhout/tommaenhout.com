@@ -1,3 +1,4 @@
+"use client";
 import SwiperCore from "swiper";
 import { Autoplay, EffectFade, Grid, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";

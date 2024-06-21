@@ -1,3 +1,4 @@
+"use client"
 import { useContext } from "react";
 import Context from "../components/context/context";
 import useWindowSize from "./useWindowSize";
