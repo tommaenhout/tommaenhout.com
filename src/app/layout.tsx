@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import State from "../components/context/state";
-import Head from "next/head";
 import "../../public/css/basic.css";
 import "../../public/css/layout.css";
 import "../../public/css/blogs.css";
