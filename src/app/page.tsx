@@ -5,10 +5,19 @@ import BackgroundSpline from "../components/BackgroundSpline";
 import SectionPresentMe from "@/components/SectionPresentMe";
 import {motion} from "framer-motion";
 import TypingAnimation from "@/components/TypingAnimation";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 export default function Home() {
-  const [transitionEnded, setTransitionEnded] = useState(false);
+  const [transitionEnded, setTransitionEnded] = useState<boolean>(false);
+  const [isCompleteFirstSentence, setIsCompleteFirstSentence] = useState<boolean>(false);
+  const [typeAnimationComplete, setTypeAnimationComplete] = useState<boolean>(false);
+
+
+  const transitionEndedLogic = () => {
+   
+      setTransitionEnded(true);
+  
+  }
   return (
     <main>
       <div className="flex relative top-0 min-h-screen bg-black  flex-col items-center justify-center p-24">
@@ -18,24 +27,26 @@ export default function Home() {
                 typeSpeed={150} 
                 className="text-5xl"
                 loop={false}
+                setIsComplete={setIsCompleteFirstSentence}
                 data={["Tom Maenhout"]}/>
-            <TypingAnimation
-                className = "text-3xl"
+            {isCompleteFirstSentence && <TypingAnimation
+                className = "text-3xl text-sunsetOrange"
                 loop={false}
-                data={["Front End Developer"]}/>
+                setIsComplete={setTypeAnimationComplete}
+                data={["Front End Developer"]}/>}
         </div>}
       </div>
-      <motion.div
-        onTransitionEnd={() => setTransitionEnded(true)} 
+      {typeAnimationComplete && <motion.div
+        onTransitionEnd={transitionEndedLogic} 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ 
-          delay: 4,
-          duration: 2 
+          delay: 1,
+          duration: 2
         }}
         className="absolute top-0 left-0 right-0 min-h-screen bg-opacity-50">
           <SectionPresentMe/>
-      </motion.div>
+      </motion.div>}
     </main>
   );
 }

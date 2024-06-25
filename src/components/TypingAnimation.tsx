@@ -10,9 +10,10 @@ interface TypingAnimationProps {
   loop?: boolean;
   className?: string;
   backSpeed?: number;
+  setIsComplete?: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const TypingAnimation = ({ data, typeSpeed, delay, loop, className, backSpeed } : TypingAnimationProps) => {
+const TypingAnimation = ({ data, typeSpeed, delay, loop, className, backSpeed, setIsComplete } : TypingAnimationProps) => {
   // Create Ref element.
   const classNameTitle = className || "subtitle subtitle-typed";
   const el = useRef(null);
@@ -26,6 +27,9 @@ const TypingAnimation = ({ data, typeSpeed, delay, loop, className, backSpeed } 
       smartBackspace: true,
       loop: loop,
       showCursor: false,
+      onComplete : () => {
+        setIsComplete && setIsComplete(true);
+      }
     });
 
 
