@@ -25,7 +25,7 @@ export default function Home() {
         {!transitionEnded && <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 space-y-2 -translate-y-1/2 w-[300px] lg:w-[400px]">
             <TypingAnimation 
                 typeSpeed={150} 
-                className="text-5xl"
+                className="text-5xl text-white"
                 loop={false}
                 setIsComplete={setIsCompleteFirstSentence}
                 data={["Tom Maenhout"]}/>

@@ -21,6 +21,8 @@ import "../../public/css/new-skin/new-skin.css";
 import "../../public/css/demos/demo-2-colors.css";
 import "../../public/css/new-skin/classic-skin.css";
 import "../../public/css/template-dark/dark.css";
+import { SocialIcon } from 'react-social-icons'
+
 
 const bio = `<p>
 I’m 33 year old Belgian full stack developer, living in Argentina. Just before the pandemic I decided to change careers. I started to study systems analysis in ORT Buenos Aires. Last June I graduated and now I’m excited to take my first steps into the working field.
@@ -41,25 +43,18 @@ const SectionPresentMe = () => {
           <div className="title">Tom Maenhout</div>
           <TypingAnimation />
           <div className="social">
-            <a target="_blank" rel="noreferrer" href="https://dribbble.com/">
-              <span className="fa fa-dribbble" />
-            </a>
-            <a target="_blank" rel="noreferrer" href="https://twitter.com/">
-              <span className="fa fa-twitter" />
-            </a>
-            <a target="_blank" rel="noreferrer" href="https://github.com/">
-              <span className="fa fa-github" />
-            </a>
-            <a target="_blank" rel="noreferrer" href="https://www.spotify.com/">
-              <span className="fa fa-spotify" />
-            </a>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://stackoverflow.com/"
-            >
-              <span className="fa fa-stack-overflow" />
-            </a>
+              <SocialIcon 
+                target="_blank" 
+                className="hover:scale-105" 
+                bgColor="transparent" 
+                fgColor="white" 
+                url="https://github.com/tommaenhout" />
+              <SocialIcon 
+                target="_blank"
+                className="hover:scale-105" 
+                bgColor="transparent" 
+                fgColor="white" 
+                url="https://www.linkedin.com/in/tom-maenhout-130557135"/>
           </div>
           {/* profile buttons */}
           <div className="lnks">
