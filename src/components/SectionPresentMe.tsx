@@ -25,7 +25,7 @@ import { SocialIcon } from 'react-social-icons'
 
 
 const bio = `<p>
-I’m 33 year old Belgian full stack developer, living in Argentina. Just before the pandemic I decided to change careers. I started to study systems analysis in ORT Buenos Aires. Last June I graduated and now I’m excited to take my first steps into the working field.
+I'm a front-end developer who loves working with the latest technologies. Every day, I focus on learning something new to improve my skills and become a better professional. I'm really interested in both design and coding, and I work hard to create user experiences that are engaging and functional. I also enjoy collaborating with others to bring ideas to life.
 </p>`;
 const SectionPresentMe = () => {
   return (
