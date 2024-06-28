@@ -5,7 +5,7 @@ import BackgroundSpline from "../components/BackgroundSpline";
 import SectionPresentMe from "@/components/SectionPresentMe";
 import {motion} from "framer-motion";
 import TypingAnimation from "@/components/TypingAnimation";
-import { useState, useRef } from "react";
+import { useState } from "react";
 
 export default function Home() {
   const [transitionEnded, setTransitionEnded] = useState<boolean>(false);

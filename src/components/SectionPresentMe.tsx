@@ -22,12 +22,16 @@ import "../../public/css/demos/demo-2-colors.css";
 import "../../public/css/new-skin/classic-skin.css";
 import "../../public/css/template-dark/dark.css";
 import { SocialIcon } from 'react-social-icons'
+import { useContext } from "react";
+import Context from "./context/context";
 
 
 const bio = `<p>
-I'm a front-end developer who loves working with the latest technologies. Every day, I focus on learning something new to improve my skills and become a better professional. I'm really interested in both design and coding, and I work hard to create user experiences that are engaging and functional. I also enjoy collaborating with others to bring ideas to life.
+I'm a front-end developer specializing in React and passionate about leveraging the latest technologies. I strive to learn something new every day to continuously improve my skills. With a strong interest in both design and coding, I focus on creating user experiences that are both engaging and functional. I enjoy collaborating with others to bring innovative ideas to life.
 </p>`;
 const SectionPresentMe = () => {
+  const { changeNav, nav, changeSideBar } = useContext(Context);
+
   return (
     <Layout bg={"gradient"}>
       <Header />
@@ -61,7 +65,9 @@ const SectionPresentMe = () => {
             <a href="#" className="lnk">
               <span className="text">Download CV</span>
             </a>
-            <a href="#" className="lnk discover">
+            <a onClick={() => {
+              changeNav("contacts");
+            }} href="#contacts" className="lnk discover">
               <span className="text">Contact Me</span>
             </a>
           </div>
@@ -82,7 +88,6 @@ const SectionPresentMe = () => {
           <Testimonials />
         </Resume>
         <Contact>
-          <ContactInfo />
           <ContactForm />
         </Contact>
       </ContentContainer>

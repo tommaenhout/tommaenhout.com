@@ -29,9 +29,6 @@ const AboutMe = ({ bio } : AboutMeProps) => {
             <div className="info-list">
               <ul>
                 <li>
-                  <strong>Age . . . . .</strong> 33
-                </li>
-                <li>
                   <strong>Residence . . . . .</strong> Argentina
                 </li>
                 <li>
