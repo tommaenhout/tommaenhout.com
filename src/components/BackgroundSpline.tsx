@@ -1,7 +1,6 @@
 "use client"
 import React from "react";
-import { useState } from "react";
-import TypingAnimation from "./TypingAnimation";
+import { ClipLoader } from "react-spinners";
 
 const Spline = React.lazy(() => import("@splinetool/react-spline"));
 
@@ -19,11 +18,10 @@ function BackgroundSpline({ setIsLoading, isLoading }: BackgroundSplineProps) {
   return (
     <>
     {isLoading &&
-    <div className="inset-0 absolute">
+    <div className="inset-0 absolute bg-nightBlack">
       <div className="flex items-center justify-center h-screen">
-        <div className="text-3xl text-white flex gap-2"> Loading <TypingAnimation className="text-sunsetOrange text-3xl w-[30px]" data={
-          ["...", "..", "."]
-        }/> 
+        <div className="text-3xl text-white flex gap-2">
+          <ClipLoader size={70}  color="#ff9800" />
         </div>
       </div>
     </div>  
