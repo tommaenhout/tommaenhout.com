@@ -3,14 +3,8 @@ import Contact from "./Contact";
 import Home from "./Home";
 import Resume from "./Resume";
 import AboutMe from "./sections/AboutMe";
-import Clients from "./sections/Clients";
 import ContactForm from "./sections/ContactForm";
-import ContactInfo from "./sections/ContactInfo";
-import FunFact from "./sections/FunFact";
-import Pricing from "./sections/Pricing";
-import Quote from "./sections/Quote";
 import ResumeSection from "./sections/Resume";
-import Services from "./sections/Services";
 import Skills from "./sections/Skills";
 import Testimonials from "./sections/Testimonials";
 import TypingAnimation from "./TypingAnimation";
@@ -76,11 +70,6 @@ const SectionPresentMe = () => {
       <ContentContainer>
         <About>
           <AboutMe bio={bio} />
-          <Services />
-          <Pricing />
-          <FunFact />
-          <Clients />
-          <Quote />
         </About>
         <Resume>
           <ResumeSection />
