@@ -18,6 +18,7 @@ import "../../public/css/template-dark/dark.css";
 import { SocialIcon } from 'react-social-icons'
 import { useContext } from "react";
 import Context from "./context/context";
+import Portfolio from "./Portfolio";
 
 
 const bio = `<p>
@@ -79,6 +80,9 @@ const SectionPresentMe = () => {
         <Contact>
           <ContactForm />
         </Contact>
+        <Portfolio>
+          hola
+        </Portfolio>
       </ContentContainer>
     </Layout>
   );
