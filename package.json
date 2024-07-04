@@ -20,6 +20,7 @@
     "isotope-layout": "^3.0.6",
     "next": "^14.2.4",
     "react": "^18",
+    "react-awesome-slider": "^4.1.0",
     "react-dom": "^18",
     "react-social-icons": "^6.16.0",
     "react-spinners": "^0.14.1",

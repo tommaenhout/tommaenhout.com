@@ -19,12 +19,13 @@ import { SocialIcon } from 'react-social-icons'
 import { useContext } from "react";
 import Context from "./context/context";
 import Portfolio from "./Portfolio";
+import PortFolioSection from "./sections/PortfolioSection";
 
 
 const bio = `<p>
 I'm a front-end developer specializing in React and passionate about leveraging the latest technologies. I strive to learn something new every day to continuously improve my skills. With a strong interest in both design and coding, I focus on creating user experiences that are both engaging and functional. I enjoy collaborating with others to bring innovative ideas to life.
 </p>`;
-const SectionPresentMe = () => {
+const PresentMe = () => {
   const { changeNav, nav, changeSideBar } = useContext(Context);
 
   return (
@@ -81,10 +82,10 @@ const SectionPresentMe = () => {
           <ContactForm />
         </Contact>
         <Portfolio>
-          hola
+          <PortFolioSection/>
         </Portfolio>
       </ContentContainer>
     </Layout>
   );
 };
-export default SectionPresentMe;
+export default PresentMe;

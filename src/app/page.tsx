@@ -2,7 +2,7 @@
 
 import React from "react";
 import BackgroundSpline from "../components/BackgroundSpline";
-import SectionPresentMe from "@/components/SectionPresentMe";
+import SectionPresentMe from "@/components/PresentMe";
 import {motion} from "framer-motion";
 import TypingAnimation from "@/components/TypingAnimation";
 import { useState } from "react";
