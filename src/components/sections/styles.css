@@ -13,4 +13,5 @@
 --control-bullet-active-color: #cf3438;
 --loader-bar-color: #ff9800;
 --loader-bar-height: 6px;
+cursor: pointer;
 }
