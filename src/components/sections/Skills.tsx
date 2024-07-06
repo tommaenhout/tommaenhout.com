@@ -63,27 +63,27 @@ const Skills = () => {
               </div>
               <ul>
                 <li className="border-line-h">
+                  <div className="name">Dutch</div>
+                  <div className="progress">
+                    <div className="percentage" style={{ width: "100%" }} />
+                  </div>
+                </li>
+                <li className="border-line-h">
+                  <div className="name">Spanish</div>
+                  <div className="progress">
+                    <div className="percentage" style={{ width: "95%" }} />
+                  </div>
+                </li>
+                <li className="border-line-h">
                   <div className="name">English</div>
                   <div className="progress">
-                    <div className="percentage" style={{ width: "90%" }} />
-                  </div>
-                </li>
-                <li className="border-line-h">
-                  <div className="name">German</div>
-                  <div className="progress">
-                    <div className="percentage" style={{ width: "60%" }} />
-                  </div>
-                </li>
-                <li className="border-line-h">
-                  <div className="name">Italian</div>
-                  <div className="progress">
-                    <div className="percentage" style={{ width: "30%" }} />
+                    <div className="percentage" style={{ width: "95%" }} />
                   </div>
                 </li>
                 <li>
-                  <div className="name">French</div>
+                  <div className="name">German</div>
                   <div className="progress ">
-                    <div className="percentage" style={{ width: "70%" }} />
+                    <div className="percentage" style={{ width: "50%" }} />
                   </div>
                 </li>
               </ul>
