@@ -1,9 +1,7 @@
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
+import Context from "../context/context";
 const ResumeSection = () => {
-
-  const portfolioClickHandler = () => {
-    console.log("Portfolio clicked");
-  }
+  const { changeNav } = useContext(Context);
   return (
     <Fragment>
       <div className="content resume">
@@ -35,7 +33,11 @@ const ResumeSection = () => {
                 <div className="company">Freelance</div>
                 <p>
                   Developed multiple web applications for various clients. See my 
-                  <em onClick={portfolioClickHandler} className="text-sunsetOrange cursor-pointer not-italic"> portfolio</em> for more information.
+                  <a 
+                    href="#portfolio" 
+                    onClick={() => {
+                    changeNav("portfolio");
+                  }} className="text-sunsetOrange cursor-pointer not-italic"> portfolio</a> for more information.
                 </p>
               </div>
             </div>
@@ -50,27 +52,16 @@ const ResumeSection = () => {
             </div>
             <div className="resume-items">
               <div className="resume-item border-line-h">
-                <div className="date">2020 - 2022</div>
-                <div className="name">Ort</div>
+              <div className="date">2022 - 2023</div>
+                <div className="name">Coderhouse</div>
                 <div className="company">Argentina</div>
-                <p>
-                  Degree in systems analysis.
-                </p>
+                <p>Coursework - Javascript, React, CSS, HTML, React Native</p>
               </div>
               <div className="resume-item border-line-h">
-                <div className="date">2005 - 2006</div>
-                <div className="name">Programming Course</div>
-                <div className="company">Paris</div>
-                <p>Coursework - Git, WordPress, Javascript, iOS, Android.</p>
-              </div>
-              <div className="resume-item">
-                <div className="date">2004 - 2005</div>
-                <div className="name">Web Design Course</div>
-                <div className="company">London</div>
-                <p>
-                  Converted Photoshop layouts to web pages using HTML, CSS, and
-                  JavaScript
-                </p>
+              <div className="date">2020 - 2022</div>
+                <div className="name">Ort</div>
+                <div className="company">Argentina</div>
+                <p>Degree in systems analysis.</p>
               </div>
             </div>
           </div>
