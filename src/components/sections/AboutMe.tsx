@@ -35,7 +35,7 @@ const AboutMe = ({ bio } : AboutMeProps) => {
                   <strong>Freelance . . . . .</strong> Available
                 </li>
                 <li>
-                  <strong>Address . . . . .</strong> Buenos Aires, AR
+                  <strong>Address . . . . .</strong> Buenos Aires
                 </li>
               </ul>
             </div>
