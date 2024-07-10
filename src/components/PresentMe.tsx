@@ -78,12 +78,12 @@ const PresentMe = () => {
           <Skills />
           <Testimonials />
         </Resume>
-        <Contact>
-          <ContactForm />
-        </Contact>
         <Portfolio>
           <PortFolioSection/>
         </Portfolio>
+        <Contact>
+          <ContactForm />
+        </Contact>
       </ContentContainer>
     </Layout>
   );

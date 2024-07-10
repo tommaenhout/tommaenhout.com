@@ -7,8 +7,8 @@ import Context from "../context/context";
 const headerMenus = [
   { title: "About", link: "about", icon: "icon fa fa-user-o" },
   { title: "Resume", link: "resume", icon: "icon fa fa-list-alt" },
-  { title: "Contact", link: "contacts", icon: "icon fa fa-envelope-o" },
   { title: "Portfolio", link: "portfolio", icon: "icon fa fa-briefcase" },
+  { title: "Contact", link: "contacts", icon: "icon fa fa-envelope-o" },
 ];
 
 interface HeaderProps {
