@@ -16,7 +16,7 @@ const Skills = () => {
                 <div className="icon">
                   <i className="fa fa-code" />
                 </div>
-                <div className="name">Coding</div>
+                <div className="name">Front-end</div>
               </div>
               <ul>
                 <li>
@@ -113,7 +113,7 @@ const Skills = () => {
                 <div className="icon">
                   <i className="fa fa-paint-brush" />
                 </div>
-                <div className="name">Basic Backend Knowledge</div>
+                <div className="name">Back-end</div>
               </div>
               <ul>
                 <li className="border-line-h">

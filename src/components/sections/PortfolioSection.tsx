@@ -36,11 +36,7 @@ const PortFolioSection = () => {
 	  <div className="title py-3">Portfolio</div>
 	  {/* content */}
 	  <div className='mt-7 max-h-[80%] relative'>
-		{text && <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }} 
-      className='absolute z-10 h-full w-full flex justify-center items-center text-black'>{text}</motion.div>}
+	
 		<AwesomeSlider
 		  onTransitionEnd={(props) => {
 			setText(data[props.currentIndex].title);
@@ -58,7 +54,9 @@ const PortFolioSection = () => {
 			</div>
 		  ))}
 		</AwesomeSlider>
+		
 	  </div>
+	
 	</div>
   );
 };
