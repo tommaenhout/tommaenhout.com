@@ -29,7 +29,6 @@ function BackgroundSpline({ setIsLoading, isLoading }: BackgroundSplineProps) {
     <div className="inset-0 absolute">
       <Spline 
         onLoad={onLoad}
-        onScroll={() => {}}
         scene={"https://prod.spline.design/XME1RwJcmat0oHI9/scene.splinecode"} 
       />
     </div>
