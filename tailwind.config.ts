@@ -11,6 +11,7 @@ const config: Config = {
       colors: {
          "sunsetOrange": "#ff9800",
          "nightBlack" : "#121316",
+         "rainyGray" : "#31313A"
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

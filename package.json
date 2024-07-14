@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@radix-ui/react-alert-dialog": "^1.1.1",
     "@splinetool/react-spline": "^3.1.0",
     "@types/express": "^4.17.21",
     "@types/isotope-layout": "^3.0.13",

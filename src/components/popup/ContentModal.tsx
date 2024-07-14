@@ -21,7 +21,7 @@ const Content = ({ content, close } : ContentProps) => {
           <div className="mfp-content" ref={domNode}>
             <div id="popup-2" className="popup-box mfp-fade">
               <div
-                dangerouslySetInnerHTML={{ __html: content.outerHTML }}
+                dangerouslySetInnerHTML={{ __html: content }}
               ></div>
               <button
                 onClick={() => close()}

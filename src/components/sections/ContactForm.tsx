@@ -1,18 +1,20 @@
 
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import emailjs from "@emailjs/browser";
+import ContentModal from '../popup/ContentModal';
+import DialogMessageSent from '../popup/implemented/DialogMessageSent';
 
 const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID
 const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID
 const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY
 
 
-
 const ContactForm =  () => {
   const ref = useRef<HTMLFormElement>(null);
-  console.log(serviceId, templateId, publicKey)
+  const [open, setOpen] = useState(false);
 
   const onsubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+    
     e.preventDefault();
     const form = ref.current;
     if (!form) return;
@@ -29,7 +31,7 @@ const ContactForm =  () => {
     }
     emailjs.sendForm(serviceId, templateId, form, publicKey)
       .then((result) => {
-        console.log(result.text);
+        setOpen(true);
       }, (error) => {
         console.log(error.text);
       });
@@ -38,7 +40,10 @@ const ContactForm =  () => {
 
 
   return (
+    <>
+    <DialogMessageSent open={open} setOpen={setOpen} />
     <div className="content contacts">
+      <ContentModal />
       {/* title */}
       <div className="title">Contact Form</div>
       {/* content */}
@@ -86,6 +91,7 @@ const ContactForm =  () => {
         <div className="clear" />
       </div>
     </div>
+    </>
   );
 };
 export default ContactForm;
