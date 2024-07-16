@@ -21,6 +21,12 @@
   }
 }
 
+
+
+p, h2, button, textarea, input {
+  font-family: inherit !important;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: "#121316";

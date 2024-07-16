@@ -6,15 +6,13 @@ import ImageGallery from "../popup/ImageGallery";
 import ImageView from "../popup/ImageView";
 import VideoPopup from "../popup/VideoPopup";
 import { createSkillsDot, dotResize } from "../utils";
-import Background from "./Background";
-import ContentSidebar from "./ContentSidebar";
+
 
 interface LayoutProps {
   children: React.ReactNode;
   noSkin?: boolean;
   bg?: string;
   containerCls?: string;
-  bgImgUrl?: string;
   animationIn?: string;
   animationOut?: string;
 }
@@ -24,7 +22,6 @@ const Layout = ({
   noSkin,
   bg,
   containerCls,
-  bgImgUrl,
   animationIn,
   animationOut,
 } : LayoutProps) => {
@@ -49,7 +46,6 @@ const Layout = ({
         >
           {children}
         </div>
-        <ContentSidebar />
       </div>
     </Fragment>
   );

@@ -54,12 +54,17 @@ const ContactForm =  () => {
               <div className="row">
                 <div className="col col-d-6 col-t-6 col-m-12">
                   <div className="group-val">
-                    <input type="text" name="name" placeholder="Full Name" />
+                    <input 
+                      required 
+                      type="text" 
+                      name="name" 
+                      placeholder="Full Name" />
                   </div>
                 </div>
                 <div className="col col-d-6 col-t-6 col-m-12">
                   <div className="group-val">
                     <input
+                      required
                       type="text"
                       name="email"
                       placeholder="Email Address"
@@ -69,6 +74,7 @@ const ContactForm =  () => {
                 <div className="col col-d-12 col-t-12 col-m-12">
                   <div className="group-val">
                     <textarea
+                      required
                       name="message"
                       placeholder="Your Message"
                       defaultValue={""}

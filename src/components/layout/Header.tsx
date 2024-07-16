@@ -35,11 +35,11 @@ const Header = ({ noSideBarBtn, menus, animationText } : HeaderProps) => {
         </div>
       </div>
       {/* menu btn */}
-      {!noSideBarBtn && (
+   {/*    {!noSideBarBtn && (
         <a href="#" onClick={() => changeSideBar(true)} className="menu-btn">
           <span />
         </a>
-      )}
+      )} */}
       {/* menu */}
       <div className="top-menu menu-minimal">
         <ul>
