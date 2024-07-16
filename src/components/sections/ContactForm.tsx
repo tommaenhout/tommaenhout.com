@@ -1,8 +1,8 @@
 
 import React, { useRef, useState } from 'react';
 import emailjs from "@emailjs/browser";
-import ContentModal from '../popup/ContentModal';
 import DialogMessageSent from '../popup/implemented/DialogMessageSent';
+import { ClipLoader } from 'react-spinners';
 
 const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID
 const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID
@@ -11,10 +11,11 @@ const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY
 
 const ContactForm =  () => {
   const ref = useRef<HTMLFormElement>(null);
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState<boolean>(false);
+  const [isLoading, setLoading] = useState<boolean>(false);
 
   const onsubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
-    
+    if (isLoading) return;
     e.preventDefault();
     const form = ref.current;
     if (!form) return;
@@ -29,11 +30,15 @@ const ContactForm =  () => {
       console.error(serviceId, templateId, publicKey);
       return;
     }
+    setLoading(true);
     emailjs.sendForm(serviceId, templateId, form, publicKey)
-      .then((result) => {
+      .then(() => {
         setOpen(true);
       }, (error) => {
         console.log(error.text);
+      }).finally(() => {
+        form.reset();
+        setLoading(false);
       });
   }
   
@@ -43,7 +48,6 @@ const ContactForm =  () => {
     <>
     <DialogMessageSent open={open} setOpen={setOpen} />
     <div className="content contacts">
-      <ContentModal />
       {/* title */}
       <div className="title">Contact Form</div>
       {/* content */}
@@ -84,7 +88,8 @@ const ContactForm =  () => {
               </div>
               <div className="align-left">
                 <button  type='submit' className="button">
-                  <span className="text">Send Message</span>
+                  <span>{isLoading ? "Sending..." : 
+                  "Send Message"}</span>
                   <span className="arrow" />
                 </button>
               </div>
