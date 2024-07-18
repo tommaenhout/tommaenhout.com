@@ -20,6 +20,7 @@ import { useContext } from "react";
 import Context from "./context/context";
 import Portfolio from "./Portfolio";
 import PortFolioSection from "./sections/PortfolioSection";
+import Spline from "@splinetool/react-spline";
 
 
 const bio = `<p>
@@ -33,10 +34,12 @@ const PresentMe = () => {
       <Header />
       <Home>
         <div className="profile">
-          <div
-            className="slide"
-            style={{ backgroundImage: "url(images/bg.jpg)" }}
-          />
+        <div className="inset-0 opacity-90 absolute slide">
+        <Spline
+        
+          scene={"https://prod.spline.design/fKY9DZTJwp82BwAx/scene.splinecode"} 
+        />
+      </div>
           <div className="image">
             <img src="images/profile.png" alt="" />
           </div>
