@@ -14,18 +14,21 @@ const data = [
 	src: "https://robinsonsinstitute.com/",
 	title: "Robinsons institute",
 	image: robinson,
-	description: "For the Robinsons Institute website project, I developed both the backend and the front end, creating a seamless and user-friendly platform that provides potential clients with detailed information about the school's offerings. The website includes a contact form and a specialized feature that connects to a database to match students with similar learning interests. When a match is found, the owner of the school is notified, enhancing the school's ability to personalize and tailor its services. Additionally, I developed a mobile app in React Native for the administrator, featuring Firebase authentication. This app allows the administrator to change the prices on the website and view a list of users in the database.",
-	technologies: "The technologies used in this project include React for building the dynamic and responsive front end, MongoDB for managing the database, and Node.js for the backend server.  The mobile app, built with React Native, allows for cross-platform functionality, and Firebase authentication ensures secure access for the administrator."
+	description: "For the Robinsons Institute website project, I developed both the backend and the front end, creating a seamless platform that provides potential clients with detailed information about the school's offerings. The site includes a contact form and a feature to match students with similar learning interests, notifying the school owner when a match is found. Additionally, I created a mobile app in React Native for the administrator, featuring Firebase authentication. This app allows the admin to update website prices and view a list of users in the database.",
+	technologies: "Technologies used include React for the front end, MongoDB for the database, and Node.js for the backend. React Native was used for the mobile app, providing cross-platform functionality, while Firebase authentication ensures secure access. This combination ensures a smooth, efficient, and scalable application."
   },
   {
 	src: "https://hype-ba.com/",
 	title: "Hype",
-	image: hype
+	image: hype,
+	description : "For the Hype Buenos Aires website project, I designed and developed a dynamic platform reflecting the club night's vibrant energy. The site offers event details, integrates with Eventbrite for guestlist management, and enables easy QR code access and VIP table bookings. Social media links keep users updated, enhancing engagement and showcasing Hype's diverse music lineup.",
+	technologies: "Technologies used include CSS, javascript, and HTML"
   },
 ];
 
 const PortFolioSection = () => {
   const [text, setText] = useState<string>(data[0].title);
+  const [description, setDescription] = useState<string>(data[0].description);
   const [index, setIndex] = useState<number>(0);
 
   const onClickHandler = (link: string) => {
