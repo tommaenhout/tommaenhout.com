@@ -61,9 +61,9 @@ const PresentMe = () => {
           </div>
           {/* profile buttons */}
           <div className="lnks">
-            <a href="#" className="lnk">
+           {/*  <a href="#" className="lnk">
               <span className="text">Download CV</span>
-            </a>
+            </a> */}
             <a onClick={() => {
               changeNav("contacts");
             }} href="#contacts" className="lnk discover">
