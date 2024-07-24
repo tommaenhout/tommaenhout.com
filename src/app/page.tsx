@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import BackgroundSpline from "../components/BackgroundSpline";
 import SectionPresentMe from "@/components/PresentMe";
 import {motion} from "framer-motion";
@@ -24,6 +24,13 @@ export default function Home() {
   const transitionEndedLogic = () => {
       setTransitionEnded(true);
   }
+
+  useEffect (() => {
+    if (isMobile) {
+      setTransitionEnded(false);
+      setIsLoadingSpline(false);
+    }
+  }, [isMobile]);
   return isClient &&  (
     <main>
       <div className="flex relative top-0 min-h-screen flex-col items-center justify-center p-24">
@@ -31,7 +38,7 @@ export default function Home() {
           setIsLoading={setIsLoadingSpline} 
           isLoading={isLoadingSpline}
         />
-        {(!transitionEnded && !isLoadingSpline) || isMobile && <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 space-y-2 -translate-y-1/2 w-[300px] lg:w-[400px]">
+        {(!transitionEnded && !isLoadingSpline) && <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 space-y-2 -translate-y-1/2 w-[300px] lg:w-[400px]">
             <TypingAnimation 
                 typeSpeed={150} 
                 className="text-5xl text-white"
