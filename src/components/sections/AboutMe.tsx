@@ -29,13 +29,13 @@ const AboutMe = ({ bio } : AboutMeProps) => {
             <div className="info-list">
               <ul>
                 <li>
-                  <strong>Residence . . . . .</strong> Argentina
+                  <strong className="w-40">Residence . . . . . .</strong>Argentina
                 </li>
                 <li>
-                  <strong>Freelance . . . . .</strong> Available
+                  <strong className="w-40">Freelance . . . . . .</strong>Available
                 </li>
                 <li>
-                  <strong>Address . . . . .</strong> Buenos Aires
+                  <strong className="w-40">Address . . . . . . . .</strong> Buenos Aires
                 </li>
               </ul>
             </div>
