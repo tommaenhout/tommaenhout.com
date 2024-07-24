@@ -1,3 +1,4 @@
+"use client"
 import About from "./About";
 import Contact from "./Contact";
 import Home from "./Home";
@@ -21,6 +22,7 @@ import Context from "./context/context";
 import Portfolio from "./Portfolio";
 import PortFolioSection from "./sections/PortfolioSection";
 import Spline from "@splinetool/react-spline";
+import useScreenSizes from "@/hooks/useScreensizes";
 
 
 const bio = `<p>
@@ -28,6 +30,7 @@ I'm a front-end developer specializing in React and passionate about leveraging 
 </p>`;
 const PresentMe = () => {
   const { changeNav, nav, changeSideBar } = useContext(Context);
+  const {isMobile } = useScreenSizes();
 
   return (
     <Layout bg={"gradient"}>
@@ -35,10 +38,9 @@ const PresentMe = () => {
       <Home>
         <div className="profile">
         <div className="inset-0 opacity-90 absolute slide">
-        <Spline
-        
+        {!isMobile ? <Spline
           scene={"https://prod.spline.design/fKY9DZTJwp82BwAx/scene.splinecode"} 
-        />
+        /> : <div className="bg-nightBlack w-full h-full"/>}
       </div>
           <div className="image">
             <img src="images/profile.png" alt="" />

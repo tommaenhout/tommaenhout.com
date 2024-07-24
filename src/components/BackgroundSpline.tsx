@@ -1,6 +1,8 @@
 "use client"
-import React from "react";
+import useScreenSizes from "@/hooks/useScreensizes";
+import React, { useEffect, useState } from "react";
 import { ClipLoader } from "react-spinners";
+
 
 const Spline = React.lazy(() => import("@splinetool/react-spline"));
 
@@ -10,14 +12,20 @@ interface BackgroundSplineProps {
 }
 
 function BackgroundSpline({ setIsLoading, isLoading }: BackgroundSplineProps) {
-
+  const { isMobile } = useScreenSizes();
+  const [isClient, setIsClient] = useState<boolean>(false);
+;
   const onLoad = () => {
     setIsLoading(false);
   }
 
-  return (
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+  
+  return isClient && (
     <>
-    {isLoading &&
+    {isLoading && !isMobile && 
     <div className="inset-0 absolute bg-nightBlack">
       <div className="flex items-center justify-center h-screen">
         <div className="text-3xl text-white flex gap-2">
@@ -27,10 +35,10 @@ function BackgroundSpline({ setIsLoading, isLoading }: BackgroundSplineProps) {
     </div>  
     }
     <div className="inset-0 absolute">
-      <Spline 
+      {!isMobile ? <Spline 
         onLoad={onLoad}
         scene={"https://prod.spline.design/XME1RwJcmat0oHI9/scene.splinecode"} 
-      />
+      /> : <div className="bg-nightBlack w-full h-full"/>}
     </div>
     
     </>

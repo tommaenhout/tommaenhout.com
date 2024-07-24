@@ -6,25 +6,32 @@ import SectionPresentMe from "@/components/PresentMe";
 import {motion} from "framer-motion";
 import TypingAnimation from "@/components/TypingAnimation";
 import { useState } from "react";
+import useScreenSizes from "@/hooks/useScreensizes";
 
 export default function Home() {
   const [transitionEnded, setTransitionEnded] = useState<boolean>(false);
   const [isCompleteFirstSentence, setIsCompleteFirstSentence] = useState<boolean>(false);
   const [typeAnimationComplete, setTypeAnimationComplete] = useState<boolean>(false);
   const [isLoadingSpline, setIsLoadingSpline] = useState<boolean>(true);
+  const {isMobile} = useScreenSizes();
+  const [isClient, setIsClient] = useState<boolean>(false);
+
+  React.useEffect(() => {
+    setIsClient(true);
+  }, []);
 
 
   const transitionEndedLogic = () => {
       setTransitionEnded(true);
   }
-  return (
+  return isClient &&  (
     <main>
       <div className="flex relative top-0 min-h-screen flex-col items-center justify-center p-24">
         <BackgroundSpline 
           setIsLoading={setIsLoadingSpline} 
           isLoading={isLoadingSpline}
         />
-        {!transitionEnded && !isLoadingSpline && <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 space-y-2 -translate-y-1/2 w-[300px] lg:w-[400px]">
+        {(!transitionEnded && !isLoadingSpline) || isMobile && <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 space-y-2 -translate-y-1/2 w-[300px] lg:w-[400px]">
             <TypingAnimation 
                 typeSpeed={150} 
                 className="text-5xl text-white"
