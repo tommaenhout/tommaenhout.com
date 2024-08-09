@@ -23,13 +23,16 @@ import Portfolio from "./Portfolio";
 import PortFolioSection from "./sections/PortfolioSection";
 import Spline from "@splinetool/react-spline";
 import useScreenSizes from "@/hooks/useScreensizes";
+import Link from "next/link";
+import Image from "next/image";
+
 
 
 const bio = `<p>
 I'm a front-end developer specializing in React and passionate about leveraging the latest technologies. I strive to learn something new every day to continuously improve my skills. With a strong interest in both design and coding, I focus on creating user experiences that are both engaging and functional. I enjoy collaborating with others to bring innovative ideas to life.
 </p>`;
 const PresentMe = () => {
-  const { changeNav, nav, changeSideBar } = useContext(Context);
+  const { changeNav } = useContext(Context);
   const {isMobile } = useScreenSizes();
 
   return (
@@ -38,12 +41,25 @@ const PresentMe = () => {
       <Home>
         <div className="profile">
         <div className="inset-0 opacity-90 absolute slide">
+        <div className="w-10 h-10 absolute top-5 left-5 cursor-pointer">
+            <Image
+              width={200}
+              height={200}
+              src="/images/minus.svg"
+              alt=""
+            />
+        </div>
         {!isMobile ? <Spline
           scene={"https://prod.spline.design/fKY9DZTJwp82BwAx/scene.splinecode"} 
         /> : <div className="bg-nightBlack w-full h-full"/>}
       </div>
           <div className="image">
-            <img src="images/profile.png" alt="" />
+            <Image 
+                priority 
+                width={600} 
+                height={600} 
+                src="/images/profile.png" 
+                alt=""/>
           </div>
           <div className="title">Tom Maenhout</div>
           <TypingAnimation />
@@ -63,14 +79,11 @@ const PresentMe = () => {
           </div>
           {/* profile buttons */}
           <div className="lnks">
-           {/*  <a href="#" className="lnk">
-              <span className="text">Download CV</span>
-            </a> */}
-            <a onClick={() => {
+            <Link onClick={() => {
               changeNav("contacts");
             }} href="#contacts" className="lnk discover">
               <span className="text">Contact Me</span>
-            </a>
+            </Link>
           </div>
         </div>
       </Home>
