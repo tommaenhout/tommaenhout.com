@@ -9,10 +9,11 @@ import "./styles.css";
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import StackIcon from 'tech-stack-icons';
+import useScreenSizes from '@/hooks/useScreensizes';
 
 
 
-const data = [
+const portfolioData = [
   {
 	src: "https://robinsonsinstitute.com/",
 	title: "Robinsons institute",
@@ -43,14 +44,19 @@ const data = [
 ];
 
 const PortFolioSection = () => {
-  const [text, setText] = useState<string>(data[0].title);
-  const [description, setDescription] = useState<string>(data[0].description);
-  const [technologieUsed, setTechnologieUsed] = useState<string>(data[0].technologies);
-  const [stack, setStack] = useState<string[]>(data[0].stack);
+  const [text, setText] = useState<string>(portfolioData[0].title);
+  const [description, setDescription] = useState<string>(portfolioData[0].description);
+  const [technologieUsed, setTechnologieUsed] = useState<string>(portfolioData[0].technologies);
+  const [stack, setStack] = useState<string[]>(portfolioData[0].stack);
+  const {isMobile} = useScreenSizes();
 
   const onClickHandler = (link: string) => {
 	window.open(link, '_blank');
   };
+
+
+
+
 
   return (
 	<div className="content">
@@ -60,23 +66,23 @@ const PortFolioSection = () => {
 	  <div className='mt-7 max-h-[80%] relative'>
 		<AwesomeSlider
 		  onTransitionEnd={(props) => {
-			setText(data[props.currentIndex].title);
-			setDescription(data[props.currentIndex].description);	
-			setTechnologieUsed(data[props.currentIndex].technologies);
-			setStack(data[props.currentIndex].stack);
+			setText(portfolioData[props.currentIndex].title);
+			setDescription(portfolioData[props.currentIndex].description);	
+			setTechnologieUsed(portfolioData[props.currentIndex].technologies);
+			setStack(portfolioData[props.currentIndex].stack);
 		  }}
 		  onTransitionStart={(props) => {
-			setText("")
-			setDescription("")
-			setTechnologieUsed("")
-			setStack([])
+			setText(!isMobile ? "" : portfolioData[props.currentIndex].title);
+			setDescription(!isMobile ? "" : portfolioData[props.currentIndex].description);
+			setTechnologieUsed(!isMobile ? "" : portfolioData[props.currentIndex].technologies);
+			setStack(!isMobile ? [] : portfolioData[props.currentIndex].stack);
 		 }}
 		  className='aws-btn'
 		  animation="cubeAnimation"
 		  mobileTouch={true}
 		  bullets={false}
 		>
-		  {data.map((item, _index) => (
+		  {portfolioData.map((item, _index) => (
 			<div key={_index} data-src={item.image.src} onClick={() =>
 			  onClickHandler(item.src)
 			}>
@@ -84,7 +90,7 @@ const PortFolioSection = () => {
 		  ))}
 		</AwesomeSlider>
 		<AnimatePresence>
-			{text &&
+			{(text || isMobile)  &&
 			<motion.div 
 				exit={{ opacity: 0 }}
 				transition={{ duration: 0.5 }}
@@ -96,12 +102,12 @@ const PortFolioSection = () => {
 							duration: 0.5,
 							staggerChildren: 0.2, 
 							staggerDirection: 1,
-							delay: index * 0.1
+							delay: !isMobile ?  index * 0.1 : 0
 						}}
 						key={index} 
 						initial={{ 
-							opacity: 0 ,
-							y: 20
+							opacity:!isMobile ? 0 : 1,
+							y: !isMobile ? 20 : 0
 						}} 
 						animate={{ 
 							opacity: 1,
