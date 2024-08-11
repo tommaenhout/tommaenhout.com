@@ -60,7 +60,7 @@ export default function Home() {
           delay: 1,
           duration: 2
         }}
-        className="absolute top-0 left-0 right-0 min-h-screen bg-opacity-50">
+        className="absolute top-0 left-0 right-0 lg:overflow-hidden min-h-screen bg-opacity-50">
           <SectionPresentMe/>
       </motion.div>}
     </main>

@@ -17,7 +17,7 @@ import "../../public/css/demos/demo-2-colors.css";
 import "../../public/css/new-skin/classic-skin.css";
 import "../../public/css/template-dark/dark.css";
 import { SocialIcon } from 'react-social-icons'
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import Context from "./context/context";
 import Portfolio from "./Portfolio";
 import PortFolioSection from "./sections/PortfolioSection";
@@ -25,7 +25,7 @@ import Spline from "@splinetool/react-spline";
 import useScreenSizes from "@/hooks/useScreensizes";
 import Link from "next/link";
 import Image from "next/image";
-
+import { AnimatePresence, motion } from "framer-motion";
 
 
 const bio = `<p>
@@ -34,21 +34,34 @@ I'm a front-end developer specializing in React and passionate about leveraging 
 const PresentMe = () => {
   const { changeNav } = useContext(Context);
   const {isMobile } = useScreenSizes();
+  const [show, setShow] = useState<boolean>(true);
 
   return (
-    <Layout bg={"gradient"}>
+    <>
+    <AnimatePresence>
+    {show && 
+    <motion.div
+      exit={{ 
+        opacity: 0,
+        y : 250,
+        scale: 0.3
+      }}
+    >
+      <Layout bg={"gradient"}>
       <Header />
       <Home>
         <div className="profile">
         <div className="inset-0 opacity-90 absolute slide">
-        <div className="w-10 h-10 absolute top-5 left-5 cursor-pointer">
+        {!isMobile && 
+          <div className="w-10 h-10 absolute top-5 left-5 cursor-pointer">
             <Image
+              onClick={() => setShow(false)}
               width={200}
               height={200}
               src="/images/minus.svg"
               alt=""
-            />
-        </div>
+              />
+        </div>}
         {!isMobile ? <Spline
           scene={"https://prod.spline.design/fKY9DZTJwp82BwAx/scene.splinecode"} 
         /> : <div className="bg-nightBlack w-full h-full"/>}
@@ -104,6 +117,21 @@ const PresentMe = () => {
         </Contact>
       </ContentContainer>
     </Layout>
+    </motion.div>
+  }
+  </AnimatePresence>
+    {!show && <div className="fixed bottom-5 right-5 cursor-pointer">
+      <Image
+        onClick={() => setShow(true)}
+        width={200}
+        height={200}
+        src="/images/minus.svg"
+        alt=""
+        />
+    </div>
+      }
+    
+    </>
   );
 };
 export default PresentMe;
