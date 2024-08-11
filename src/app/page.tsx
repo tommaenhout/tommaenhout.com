@@ -8,6 +8,7 @@ import TypingAnimation from "@/components/TypingAnimation";
 import { useState } from "react";
 import useScreenSizes from "@/hooks/useScreensizes";
 
+
 export default function Home() {
   const [transitionEnded, setTransitionEnded] = useState<boolean>(false);
   const [isCompleteFirstSentence, setIsCompleteFirstSentence] = useState<boolean>(false);
@@ -16,7 +17,8 @@ export default function Home() {
   const {isMobile} = useScreenSizes();
   const [isClient, setIsClient] = useState<boolean>(false);
 
-  React.useEffect(() => {
+
+  useEffect(() => {
     setIsClient(true);
   }, []);
 
@@ -24,6 +26,8 @@ export default function Home() {
   const transitionEndedLogic = () => {
       setTransitionEnded(true);
   }
+
+  
 
   useEffect (() => {
     if (isMobile) {

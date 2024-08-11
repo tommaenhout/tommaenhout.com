@@ -25,7 +25,7 @@ import Spline from "@splinetool/react-spline";
 import useScreenSizes from "@/hooks/useScreensizes";
 import Link from "next/link";
 import Image from "next/image";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useAnimate } from "framer-motion";
 
 
 const bio = `<p>
@@ -35,18 +35,28 @@ const PresentMe = () => {
   const { changeNav } = useContext(Context);
   const {isMobile } = useScreenSizes();
   const [show, setShow] = useState<boolean>(true);
+  const [scope, animate] = useAnimate();
+
+  const onclickHandlerMinimize = () => {
+    console.log(scope.current)
+    animate(scope.current, {
+      y: 200,
+      scale: 0.1
+    }, {
+      duration: 0.3,
+      ease: "easeInOut"
+    });
+    setShow(false);
+  }
+
+
+
 
   return (
     <>
-    <AnimatePresence>
-    {show && 
-    <motion.div
-      exit={{ 
-        opacity: 0,
-        y : 250,
-        scale: 0.3
-      }}
-    >
+    <div
+      className= {`${!show ? "cursor-pointer" : "cursor-auto"}`}
+      ref = {scope}>
       <Layout bg={"gradient"}>
       <Header />
       <Home>
@@ -55,7 +65,7 @@ const PresentMe = () => {
         {!isMobile && 
           <div className="w-10 h-10 absolute top-5 left-5 cursor-pointer">
             <Image
-              onClick={() => setShow(false)}
+              onClick={onclickHandlerMinimize}
               width={200}
               height={200}
               src="/images/minus.svg"
@@ -117,10 +127,9 @@ const PresentMe = () => {
         </Contact>
       </ContentContainer>
     </Layout>
-    </motion.div>
-  }
-  </AnimatePresence>
-    {!show && <div className="fixed bottom-5 right-5 cursor-pointer">
+    </div>
+  
+   {/*  {!show && <div className="fixed bottom-5 right-5 cursor-pointer">
       <Image
         onClick={() => setShow(true)}
         width={200}
@@ -129,7 +138,7 @@ const PresentMe = () => {
         alt=""
         />
     </div>
-      }
+      } */}
     
     </>
   );
