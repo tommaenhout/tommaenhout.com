@@ -65,7 +65,10 @@ export default function Home() {
           duration: 2
         }}
         className="absolute top-0 left-0 right-0 lg:overflow-hidden min-h-screen bg-opacity-50">
-          <SectionPresentMe/>
+          <div className="relative scale-50">
+              <SectionPresentMe/>
+              <div className="absolute z-50 inset-0 bg-black"/>
+          </div>
       </motion.div>}
     </main>
   );

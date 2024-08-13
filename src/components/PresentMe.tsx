@@ -49,13 +49,23 @@ const PresentMe = () => {
     setShow(false);
   }
 
+  const onclickHandlerMaximize = () => {
+    animate(scope.current, {
+      y: 0,
+      scale: 1
+    }, {
+      duration: 0.3,
+      ease: "easeInOut"
+    });
+    setShow(true);
+  }
+
 
 
 
   return (
-    <>
+    <div  className= {`${!show ? "relative" : "static"}`}>
     <div
-      className= {`${!show ? "cursor-pointer" : "cursor-auto"}`}
       ref = {scope}>
       <Layout bg={"gradient"}>
       <Header />
@@ -140,7 +150,7 @@ const PresentMe = () => {
     </div>
       } */}
     
-    </>
+    </div>
   );
 };
 export default PresentMe;
