@@ -21,7 +21,7 @@
   }
 }
 
-p, h2, button, textarea, input {
+p, h2, button, textarea, input, h3 {
   font-family: inherit !important;
 }
 

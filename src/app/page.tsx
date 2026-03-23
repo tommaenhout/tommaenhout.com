@@ -3,6 +3,7 @@
 import React, { useEffect } from "react";
 import BackgroundSpline from "../components/BackgroundSpline";
 import SectionPresentMe from "@/components/PresentMe";
+import AIChat from "@/components/AIChat";
 import {motion} from "framer-motion";
 import TypingAnimation from "@/components/TypingAnimation";
 import { useState } from "react";
@@ -69,6 +70,7 @@ export default function Home() {
               <SectionPresentMe/>
           </div>
       </motion.div>}
+      <AIChat />
     </main>
   );
 }
