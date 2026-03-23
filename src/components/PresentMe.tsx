@@ -33,7 +33,7 @@ I'm a front-end developer specializing in React and passionate about leveraging 
 </p>`;
 const PresentMe = () => {
   const { changeNav } = useContext(Context);
-  const {isMobile } = useScreenSizes();
+  const { isMobile } = useScreenSizes();
   const [show, setShow] = useState<boolean>(true);
   const [scope, animate] = useAnimate();
 
@@ -64,83 +64,73 @@ const PresentMe = () => {
 
 
   return (
-    <div className= {`${!show ? "relative" : "static"}`}>
-    <div
-      ref = {scope}
-      onClick={!show ? onclickHandlerMaximize : undefined}
-      className={!show ? "cursor-pointer" : ""}>
-      <Layout bg={"gradient"}>
-      <Header />
-      <Home>
-        <div className="profile">
-        <div className="inset-0 opacity-90 absolute slide">
-        {!isMobile && 
-          <div className="w-10 h-10 absolute top-5 left-5 cursor-pointer">
-            <Image
-              onClick={onclickHandlerMinimize}
-              width={200}
-              height={200}
-              src="/images/minus.svg"
-              alt=""
-              />
-        </div>}
-        {!isMobile ? <Spline
-          scene={"https://prod.spline.design/fKY9DZTJwp82BwAx/scene.splinecode"} 
-        /> : <div className="bg-nightBlack w-full h-full"/>}
+    <div className={`${!show ? "relative" : "static"}`}>
+      <div
+        ref={scope}
+        onClick={!show ? onclickHandlerMaximize : undefined}
+        className={!show ? "cursor-pointer" : ""}>
+        <Layout bg={"gradient"}>
+          <Header />
+          <Home>
+            <div className="profile">
+              <div className="inset-0 opacity-90 absolute slide">
+                {!isMobile ? <Spline
+                  scene={"https://prod.spline.design/fKY9DZTJwp82BwAx/scene.splinecode"}
+                /> : <div className="bg-nightBlack w-full h-full" />}
+              </div>
+              <div className="image">
+                <Image
+                  priority
+                  width={600}
+                  height={600}
+                  src="/images/profile.png"
+                  alt="" />
+              </div>
+              <div className="title">Tom Maenhout</div>
+              <TypingAnimation />
+              <div className="social">
+                <SocialIcon
+                  target="_blank"
+                  className="hover:scale-105"
+                  bgColor="transparent"
+                  fgColor="white"
+                  url="https://github.com/tommaenhout" />
+                <SocialIcon
+                  target="_blank"
+                  className="hover:scale-105"
+                  bgColor="transparent"
+                  fgColor="white"
+                  url="https://www.linkedin.com/in/tom-maenhout-130557135" />
+              </div>
+              {/* profile buttons */}
+              <div className="lnks">
+                <Link onClick={() => {
+                  changeNav("contacts");
+                }} href="#contacts" className="lnk discover">
+                  <span className="text">Contact Me</span>
+                </Link>
+              </div>
+            </div>
+          </Home>
+          <ContentContainer>
+            <About>
+              <AboutMe bio={bio} />
+            </About>
+            <Resume>
+              <ResumeSection />
+              <Skills />
+              <Testimonials />
+            </Resume>
+            <Portfolio>
+              <PortFolioSection />
+            </Portfolio>
+            <Contact>
+              <ContactForm />
+            </Contact>
+          </ContentContainer>
+        </Layout>
       </div>
-          <div className="image">
-            <Image 
-                priority 
-                width={600} 
-                height={600} 
-                src="/images/profile.png" 
-                alt=""/>
-          </div>
-          <div className="title">Tom Maenhout</div>
-          <TypingAnimation />
-          <div className="social">
-              <SocialIcon 
-                target="_blank" 
-                className="hover:scale-105" 
-                bgColor="transparent" 
-                fgColor="white" 
-                url="https://github.com/tommaenhout" />
-              <SocialIcon 
-                target="_blank"
-                className="hover:scale-105" 
-                bgColor="transparent" 
-                fgColor="white" 
-                url="https://www.linkedin.com/in/tom-maenhout-130557135"/>
-          </div>
-          {/* profile buttons */}
-          <div className="lnks">
-            <Link onClick={() => {
-              changeNav("contacts");
-            }} href="#contacts" className="lnk discover">
-              <span className="text">Contact Me</span>
-            </Link>
-          </div>
-        </div>
-      </Home>
-      <ContentContainer>
-        <About>
-          <AboutMe bio={bio} />
-        </About>
-        <Resume>
-          <ResumeSection />
-          <Skills />
-          <Testimonials />
-        </Resume>
-        <Portfolio>
-          <PortFolioSection/>
-        </Portfolio>
-        <Contact>
-          <ContactForm />
-        </Contact>
-      </ContentContainer>
-    </Layout>
-    </div>
-    
+
     </div>
   );
 };

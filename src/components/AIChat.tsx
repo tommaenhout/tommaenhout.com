@@ -44,7 +44,7 @@ const AIChat = () => {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-0 md:bottom-6 md:right-6 z-[9999] h-full w-full  md:w-[450px] md:h-[630px] bg-black rounded-lg shadow-2xl flex flex-col overflow-hidden">
+        <div className="fixed bottom-0 md:bottom-6 md:right-6 z-[9999] h-full w-full  md:w-[450px] md:h-[585px] bg-black rounded-lg shadow-2xl flex flex-col overflow-hidden">
           {/* Header */}
           <div className="relative">
           <div className="bg-rainyGray text-white p-4">
