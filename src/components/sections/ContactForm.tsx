@@ -1,37 +1,30 @@
-
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import emailjs from "@emailjs/browser";
 import DialogMessageSent from '../popup/implemented/DialogMessageSent';
 import { ClipLoader } from 'react-spinners';
 
-const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID
-const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID
-const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY
-
-
 const ContactForm =  () => {
+  const [emailConfig, setEmailConfig] = useState<any>(null);
   const ref = useRef<HTMLFormElement>(null);
   const [open, setOpen] = useState<boolean>(false);
   const [isLoading, setLoading] = useState<boolean>(false);
 
+  useEffect(() => {
+    // Fetch EmailJS config from Firebase function
+    fetch('https://us-central1-tommaenhout-b1c18.cloudfunctions.net/getEmailConfig')
+      .then(res => res.json())
+      .then(config => setEmailConfig(config))
+      .catch(err => console.error('Failed to fetch email config:', err));
+  }, []);
+
   const onsubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
-    if (isLoading) return;
+    if (isLoading || !emailConfig) return;
     e.preventDefault();
     const form = ref.current;
     if (!form) return;
-    const values = new FormData(form);
-    const data = {
-      name: values.get("name"),
-      email: values.get("email"),
-      message: values.get("message"),
-    };
 
-    if (serviceId === undefined || templateId === undefined || publicKey === undefined) {
-      console.error(serviceId, templateId, publicKey);
-      return;
-    }
     setLoading(true);
-    emailjs.sendForm(serviceId, templateId, form, publicKey)
+    emailjs.sendForm(emailConfig.serviceId, emailConfig.templateId, form, emailConfig.publicKey)
       .then(() => {
         setOpen(true);
       }, (error) => {

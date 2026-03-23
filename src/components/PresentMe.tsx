@@ -25,7 +25,7 @@ import Spline from "@splinetool/react-spline";
 import useScreenSizes from "@/hooks/useScreensizes";
 import Link from "next/link";
 import Image from "next/image";
-import { AnimatePresence, motion, useAnimate } from "framer-motion";
+import { useAnimate } from "framer-motion";
 
 
 const bio = `<p>
@@ -38,7 +38,6 @@ const PresentMe = () => {
   const [scope, animate] = useAnimate();
 
   const onclickHandlerMinimize = () => {
-    console.log(scope.current)
     animate(scope.current, {
       y: 200,
       scale: 0.1
@@ -50,6 +49,7 @@ const PresentMe = () => {
   }
 
   const onclickHandlerMaximize = () => {
+
     animate(scope.current, {
       y: 0,
       scale: 1
@@ -64,9 +64,11 @@ const PresentMe = () => {
 
 
   return (
-    <div  className= {`${!show ? "relative" : "static"}`}>
+    <div className= {`${!show ? "relative" : "static"}`}>
     <div
-      ref = {scope}>
+      ref = {scope}
+      onClick={!show ? onclickHandlerMaximize : undefined}
+      className={!show ? "cursor-pointer" : ""}>
       <Layout bg={"gradient"}>
       <Header />
       <Home>
@@ -138,17 +140,6 @@ const PresentMe = () => {
       </ContentContainer>
     </Layout>
     </div>
-  
-   {/*  {!show && <div className="fixed bottom-5 right-5 cursor-pointer">
-      <Image
-        onClick={() => setShow(true)}
-        width={200}
-        height={200}
-        src="/images/minus.svg"
-        alt=""
-        />
-    </div>
-      } */}
     
     </div>
   );

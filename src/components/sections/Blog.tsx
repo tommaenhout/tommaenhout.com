@@ -1,4 +1,5 @@
 import { Fragment, useContext } from "react";
+import Image from "next/image";
 import Context from "../context/context";
 
 
@@ -19,9 +20,49 @@ const BlogSection = () => {
             <div className="box-item">
               <div className="image">
                 <a href="#" onClick={() => changeNav("blog-post")}>
-                  <img
-                    src="images/blog/blog1.jpg"
+                  <Image
+                    src="/images/blog/blog1.jpg"
                     alt="By spite about do of allow"
+                    width={400}
+                    height={300}
+                    className="w-full h-auto"
+                  />
+                  <span className="info">
+                    <span className="ion ion-document-text" />
+                  </span>
+                </a>
+              </div>
+              <div className="desc">
+                <a href="#" onClick={() => changeNav("blog-post")}>
+                  <span className="date">March 10, 2022</span>
+                </a>
+                <a
+                  href="#"
+                  onClick={() => changeNav("blog-post")}
+                  className="name"
+                >
+                  By spite about do of allow
+                </a>
+                <div className="text">
+                  <p>
+                    Which whose darkness moving were behold. Created day heaven he
+                    every his his upon upon sixth.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* blog item */}
+          <div className="col col-d-6 col-t-6 col-m-12">
+            <div className="box-item">
+              <div className="image">
+                <a href="#" onClick={() => changeNav("blog-post")}>
+                  <Image
+                    src="/images/blog/blog2.jpg"
+                    alt="By spite about do of allow"
+                    width={400}
+                    height={300}
+                    className="w-full h-auto"
                   />
                   <span className="info">
                     <span className="ion ion-document-text" />
@@ -54,9 +95,12 @@ const BlogSection = () => {
             <div className="box-item">
               <div className="image">
                 <a href="#" onClick={() => changeNav("blog-post")}>
-                  <img
-                    src="images/blog/blog2.jpg"
+                  <Image
+                    src="/images/blog/blog3.jpg"
                     alt="By spite about do of allow"
+                    width={400}
+                    height={300}
+                    className="w-full h-auto"
                   />
                   <span className="info">
                     <span className="ion ion-document-text" />
@@ -89,44 +133,12 @@ const BlogSection = () => {
             <div className="box-item">
               <div className="image">
                 <a href="#" onClick={() => changeNav("blog-post")}>
-                  <img
-                    src="images/blog/blog3.jpg"
+                  <Image
+                    src="/images/blog/blog1.jpg"
                     alt="By spite about do of allow"
-                  />
-                  <span className="info">
-                    <span className="ion ion-document-text" />
-                  </span>
-                </a>
-              </div>
-              <div className="desc">
-                <a href="#" onClick={() => changeNav("blog-post")}>
-                  <span className="date">April 28, 2020</span>
-                </a>
-                <a
-                  href="#"
-                  onClick={() => changeNav("blog-post")}
-                  className="name"
-                >
-                  By spite about do of allow
-                </a>
-                <div className="text">
-                  <p>
-                    Ex audire suavitate has, ei quodsi tacimates sapientem sed,
-                    pri zril ubique ut. Te cule tation munere noluisse. Enim
-                    torquatos…
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* blog item */}
-          <div className="col col-d-6 col-t-6 col-m-12">
-            <div className="box-item">
-              <div className="image">
-                <a href="#" onClick={() => changeNav("blog-post")}>
-                  <img
-                    src="images/blog/blog1.jpg"
-                    alt="By spite about do of allow"
+                    width={400}
+                    height={300}
+                    className="w-full h-auto"
                   />
                   <span className="info">
                     <span className="ion ion-document-text" />
